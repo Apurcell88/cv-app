@@ -4,6 +4,7 @@ import Header from './components/Header';
 import GeneralInfo from './components/General';
 
 function App() {
+
   return (
     <div className="App">
       <Header />

@@ -28,6 +28,10 @@ const GeneralInfo = (props) => {
     });
   }
 
+  const handleEdit = () => {
+    setDisplayInfo(false);
+  }
+
   return (
     <div className="general-container">
       <h2 className='title-text'>General Information</h2>
@@ -37,6 +41,7 @@ const GeneralInfo = (props) => {
           <h3 className='general-text'>{info.name}</h3>
           <h3 className='general-text'>{info.email}</h3>
           <h3 className='general-text'>{info.phoneNumber}</h3>
+          <button className='edit-btn' onClick={handleEdit}>Edit</button>
         </article> :
         <form onSubmit={handleSubmit} className="general-form">
           <label htmlFor="name">Full Name: </label>
@@ -66,7 +71,11 @@ const GeneralInfo = (props) => {
             value={info.phoneNumber}
             onChange={handleChange}
           />
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit"
+            className="btn"
+          />
         </form>}
     </div>
   );

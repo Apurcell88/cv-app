@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './components/Header';
 import GeneralInfo from './components/General';
 import Education from './components/Education';
+import Experience from './components/Experience';
 
 function App() {
   // -------- General Info state --------
@@ -24,6 +25,17 @@ function App() {
 
   const [displayEducation, setDisplayEducation] = React.useState(false);
   // -------- Education Info state ends here --------
+
+  // -------- Experience Info state --------
+  const [experience, setExperience] = React.useState({
+    company: '',
+    position: '',
+    duties: '',
+    date: ''
+  })
+
+  const [displayExperience, setDisplayExperience] = React.useState(false);
+  // -------- Experience Info state ends here --------
 
   const handleChange = (e, setState) => {
     const { id, value } = e.target;
@@ -67,6 +79,18 @@ function App() {
         setEducation={setEducation}
         displayEducation={displayEducation}
         setDisplayEducation={setDisplayEducation}
+        handleChange={handleChange}
+        handleEdit={handleEdit}
+        handleSubmit={handleSubmit}
+      />
+      <Experience
+        company={experience.company}
+        position={experience.position}
+        duties={experience.duties}
+        date={experience.date}
+        setExperience={setExperience}
+        displayExperience={displayExperience}
+        setDisplayExperience={setDisplayExperience} 
         handleChange={handleChange}
         handleEdit={handleEdit}
         handleSubmit={handleSubmit}

@@ -1,36 +1,6 @@
 import React from 'react';
 
 const GeneralInfo = (props) => {
-  // move state and functions into App.js and pass as props. All components need access to these functions
-  // const [info, setInfo] = React.useState({
-  //   name: '',
-  //   email: '',
-  //   phoneNumber: ''
-  // });
-
-  // const [displayInfo, setDisplayInfo] = React.useState(false);
-
-  // const handleChange = (e) => {
-  //   const { id, value } = e.target;
-  //   setInfo(prevInfo => {
-  //     return {
-  //       ...prevInfo,
-  //       [id]: value
-  //     }
-  //   })
-  // }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setDisplayInfo(prevInfo => {
-  //     return !prevInfo;
-  //   });
-  // }
-
-  // const handleEdit = () => {
-  //   setDisplayInfo(false);
-  // }
-
   return (
     <div className="general-container">
       <h2 className='title-text'>General Information</h2>

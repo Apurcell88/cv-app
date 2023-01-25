@@ -5,6 +5,7 @@ import GeneralInfo from './components/General';
 import Education from './components/Education';
 
 function App() {
+  // -------- General Info state --------
   const [info, setInfo] = React.useState({
     name: '',
     email: '',
@@ -12,6 +13,17 @@ function App() {
   });
 
   const [displayInfo, setDisplayInfo] = React.useState(false);
+  // -------- General Info state ends here --------
+
+  // -------- Education Info state --------
+  const [education, setEducation] = React.useState({
+    school: '',
+    titleOfStudy: '',
+    dateOfStudy: ''
+  })
+
+  const [displayEducation, setDisplayEducation] = React.useState(false);
+  // -------- Education Info state ends here --------
 
   const handleChange = (e, setState) => {
     const { id, value } = e.target;
@@ -48,7 +60,17 @@ function App() {
         handleEdit={handleEdit}
         handleSubmit={handleSubmit}
       />
-      <Education />
+      <Education
+        school={education.school}
+        titleOfStudy={education.titleOfStudy}
+        dateOfStudy={education.dateOfStudy}
+        setEducation={setEducation}
+        displayEducation={displayEducation}
+        setDisplayEducation={setDisplayEducation}
+        handleChange={handleChange}
+        handleEdit={handleEdit}
+        handleSubmit={handleSubmit}
+      />
     </div>
   );
 }
